@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta — Serviços de Marketing | Agência Ângelo × Arena das Dunas</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --lj:   #E8601A;
+    --lj2:  #F07A35;
+    --lj3:  #C44D0E;
+    --dark:  #0A0B0D;
+    --dark2: #101214;
+    --dark3: #171A1E;
+    --dark4: #1E2126;
+    --light: #F2F3F5;
+    --light2:#E8EAED;
+    --light3:#DADDE2;
+    --texto: #161820;
+    --suave: #5A5E6A;
+    --tw: rgba(255,255,255,0.9);
+    --ts: rgba(255,255,255,0.4);
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Barlow', sans-serif; background: var(--dark); color: white; font-size: 15px; line-height: 1.7; overflow-x: hidden; }
+
+  /* ── NAV ── */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,11,13,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 0 56px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 17px; font-weight: 700; color: white; text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; }
+  .nav-logo span { color: var(--lj); }
+  .nav-links { display: flex; gap: 22px; list-style: none; }
+  .nav-links a { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--lj); }
+
+  /* ── HERO ── */
+  .hero { min-height: 100vh; display: flex; align-items: flex-end; padding: 120px 56px 80px; position: relative; overflow: hidden; }
+
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 80% 20%, rgba(232,96,26,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 10% 80%, rgba(232,96,26,0.06) 0%, transparent 40%);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-inner { max-width: 960px; width: 100%; position: relative; z-index: 2; }
+
+  .hero-collab {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.26em;
+    text-transform: uppercase; color: rgba(255,255,255,0.3);
+    margin-bottom: 26px; opacity: 0; animation: up 0.7s 0.1s forwards;
+  }
+  .hero-collab .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--lj); flex-shrink: 0; }
+  .hero-collab .hl { color: var(--lj); }
+
+  .hero-h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(56px, 10vw, 118px);
+    font-weight: 900; line-height: 0.85;
+    color: white; text-transform: uppercase;
+    letter-spacing: -0.01em; margin-bottom: 32px;
+    opacity: 0; animation: up 0.7s 0.25s forwards;
+  }
+  .hero-h1 .acc { color: var(--lj2); }
+  .hero-h1 .dim { color: rgba(255,255,255,0.18); }
+
+  .hero-sub {
+    font-size: 16px; font-weight: 300; color: var(--ts);
+    max-width: 480px; line-height: 1.85; margin-bottom: 52px;
+    opacity: 0; animation: up 0.7s 0.4s forwards;
+  }
+
+  .hero-meta {
+    display: flex; gap: 0; border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 30px; flex-wrap: wrap;
+    opacity: 0; animation: up 0.7s 0.55s forwards;
+  }
+  .hm { padding-right: 32px; margin-right: 32px; border-right: 1px solid rgba(255,255,255,0.08); }
+  .hm:last-child { border-right: none; margin-right: 0; }
+  .hm label { display: block; font-size: 9px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.2); margin-bottom: 4px; font-family: 'Barlow Condensed', sans-serif; }
+  .hm span { font-size: 14px; color: var(--tw); font-weight: 400; }
+
+  @keyframes up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ── LAYOUT ── */
+  .sec { padding: 88px 56px; }
+  .sec-inner { max-width: 960px; margin: 0 auto; }
+  .sec-mid { background: var(--dark2); }
+  .sec-light { background: var(--light); }
+
+  .sh { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .sh-n { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--lj); background: rgba(232,96,26,0.1); border: 1px solid rgba(232,96,26,0.25); padding: 4px 10px; border-radius: 3px; flex-shrink: 0; }
+  .sh-t { font-family: 'Barlow Condensed', sans-serif; font-size: 40px; font-weight: 800; color: white; line-height: 1; text-transform: uppercase; letter-spacing: 0.02em; }
+  .sec-light .sh-t { color: var(--texto); }
+  .sec-light .sh-n { background: rgba(232,96,26,0.07); border-color: rgba(232,96,26,0.18); }
+
+  /* ── SERVIÇOS ── */
+  .servicos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .srv {
+    background: var(--dark3);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    padding: 32px 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .srv:hover { transform: translateY(-3px); border-color: rgba(232,96,26,0.25); }
+
+  .srv::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: rgba(255,255,255,0.05);
+    transition: background 0.2s;
+  }
+  .srv:hover::before { background: linear-gradient(90deg, var(--lj3), var(--lj2)); }
+
+  .srv-icon { font-size: 30px; margin-bottom: 16px; }
+
+  .srv-nome {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px; font-weight: 800;
+    color: white; text-transform: uppercase;
+    letter-spacing: 0.03em; line-height: 1.1;
+    margin-bottom: 10px;
+    flex: 1;
+  }
+
+  .srv-desc {
+    font-size: 13px; font-weight: 300;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.65; margin-bottom: 24px;
+  }
+
+  .srv-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 20px;
+  }
+
+  .srv-valor {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 42px; font-weight: 900;
+    color: white; line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .srv-valor sup { font-size: 17px; color: var(--lj); vertical-align: super; margin-right: 2px; font-weight: 600; }
+  .srv-unidade { font-size: 11px; color: rgba(255,255,255,0.28); margin-top: 4px; font-family: 'Barlow Condensed', sans-serif; letter-spacing: 0.1em; }
+
+  .srv-cta {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(232,96,26,0.1); border: 1px solid rgba(232,96,26,0.28);
+    color: var(--lj2); font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 10px 16px; border-radius: 6px; text-decoration: none;
+    transition: background 0.2s; white-space: nowrap; flex-shrink: 0;
+  }
+  .srv-cta:hover { background: rgba(232,96,26,0.2); border-color: rgba(232,96,26,0.5); }
+
+  /* Card especial — cobertura com variação de preço */
+  .srv-vars {
+    display: flex; flex-direction: column; gap: 8px;
+    margin-bottom: 20px;
+  }
+  .srv-var {
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px; padding: 10px 14px;
+    font-size: 13px;
+  }
+  .srv-var .label { color: rgba(255,255,255,0.5); }
+  .srv-var .val { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 800; color: white; }
+  .srv-var .val sup { font-size: 11px; color: var(--lj); vertical-align: super; margin-right: 2px; }
+
+  /* ── AGÊNCIA ── */
+  .agencia-box {
+    background: var(--dark4); border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px; padding: 40px;
+    position: relative; overflow: hidden;
+  }
+  .agencia-box::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(180deg, var(--lj3), var(--lj2)); }
+  .agencia-nums { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 28px; }
+  .agencia-num { background: var(--dark); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 20px; text-align: center; }
+  .agencia-num span { font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 900; color: var(--lj); display: block; line-height: 1; }
+  .agencia-num p { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 4px; }
+
+  /* ── TABELA RESUMO ── */
+  .tabela { width: 100%; border-collapse: collapse; }
+  .tabela th { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.3); text-align: left; padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .tabela td { font-size: 14px; color: rgba(255,255,255,0.65); padding: 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+  .tabela tr:last-child td { border-bottom: none; }
+  .tabela tr:hover td { background: rgba(255,255,255,0.02); }
+  .tabela td:first-child { font-weight: 500; color: white; }
+  .tabela td:last-child { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 800; color: var(--lj2); text-align: right; white-space: nowrap; }
+  .tabela .tag { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); padding: 2px 8px; border-radius: 4px; margin-left: 8px; }
+
+  /* ── CTA FINAL ── */
+  .cta-sec { padding: 96px 56px; position: relative; overflow: hidden; }
+  .cta-sec::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(232,96,26,0.05) 1px, transparent 1px); background-size: 40px 40px; }
+  .cta-sec::after { content: ''; position: absolute; bottom: -150px; right: -80px; width: 700px; height: 600px; background: radial-gradient(ellipse, rgba(232,96,26,0.12) 0%, transparent 60%); pointer-events: none; }
+  .cta-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: center; }
+  .cta-h { font-family: 'Barlow Condensed', sans-serif; font-size: 52px; font-weight: 900; color: white; line-height: 0.95; text-transform: uppercase; margin-bottom: 16px; }
+  .cta-h em { font-style: normal; color: var(--lj2); }
+  .cta-p { font-size: 15px; font-weight: 300; color: var(--ts); line-height: 1.8; max-width: 480px; }
+  .cta-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--lj); color: white; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 28px; border-radius: 6px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.2s, transform 0.2s; }
+  .cta-btn:hover { background: var(--lj2); transform: translateY(-2px); }
+
+  footer { border-top: 1px solid rgba(255,255,255,0.05); padding: 32px 56px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+  .ft-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.04em; }
+  .ft-logo span { color: var(--lj); }
+  .ft-info { font-size: 12px; color: rgba(255,255,255,0.24); text-align: right; line-height: 1.9; }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; } .nav-links { display: none; }
+    .hero, .sec, .cta-sec { padding: 80px 24px 60px; } .hero { padding-top: 100px; }
+    .servicos-grid, .agencia-nums { grid-template-columns: 1fr; }
+    .cta-inner { grid-template-columns: 1fr; gap: 28px; }
+    .hm { border-right: none; margin-right: 0; padding-right: 0; }
+    footer { padding: 28px 24px; } .ft-info { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo"><span>Agência</span> Ângelo</a>
+  <ul class="nav-links">
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#resumo">Tabela</a></li>
+    <li><a href="#agencia">A Agência</a></li>
+    <li><a href="https://instagram.com/aagenciaangelo" target="_blank" style="color:var(--lj)!important;">@aagenciaangelo</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-collab">
+      <span>Agência Ângelo</span>
+      <div class="dot"></div>
+      <span class="hl">Arena das Dunas</span>
+    </div>
+    <h1 class="hero-h1">
+      SERVIÇOS DE<br>
+      <span class="acc">MARKETING</span><br>
+      <span class="dim">SOB DEMANDA</span>
+    </h1>
+    <p class="hero-sub">Produções avulsas de design, vídeo, cobertura de eventos e consultoria — contrate o que precisar, quando precisar.</p>
+    <div class="hero-meta">
+      <div class="hm"><label>Preparado para</label><span>Arena das Dunas</span></div>
+      <div class="hm"><label>Preparado por</label><span>Adson Ângelo</span></div>
+      <div class="hm"><label>Data</label><span>Julho de 2026</span></div>
+      <div class="hm"><label>Validade</label><span>15 dias</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos" class="sec sec-mid">
+  <div class="sec-inner">
+    <div class="sh"><span class="sh-n">01</span><h2 class="sh-t">Serviços e valores</h2></div>
+    <p style="font-size:15px;font-weight:300;color:var(--ts);max-width:640px;line-height:1.85;margin-bottom:44px;">Todos os serviços são contratados sob demanda — sem mensalidade, sem contrato de longo prazo. Solicite o que precisar e receba o orçamento confirmado antes de iniciar.</p>
+
+    <div class="servicos-grid">
+
+      <!-- Arte digital -->
+      <div class="srv">
+        <div class="srv-icon">🎨</div>
+        <div class="srv-nome">Arte para uso digital</div>
+        <div class="srv-desc">Posts para Instagram, stories, capas, artes para WhatsApp e demais formatos digitais — com identidade visual da Arena das Dunas.</div>
+        <div class="srv-bottom">
+          <div>
+            <div class="srv-valor"><sup>R$</sup>50</div>
+            <div class="srv-unidade">por arte</div>
+          </div>
+          <a href="https://wa.me/5584991236489?text=Ol%C3%A1%2C+Adson%21+Preciso+de+artes+para+uso+digital+%28R%24+50%2C00+por+arte%29+para+a+Arena+das+Dunas." target="_blank" class="srv-cta">💬 Solicitar</a>
+        </div>
+      </div>
+
+      <!-- Arte offline -->
+      <div class="srv">
+        <div class="srv-icon">🖼️</div>
+        <div class="srv-nome">Arte para uso offline</div>
+        <div class="srv-desc">Banners, crachás, flyers, cartazes, lonas e demais materiais para impressão — com arquivo em alta resolução pronto para a gráfica.</div>
+        <div class="srv-bottom">
+          <div>
+            <div class="srv-valor"><sup>R$</sup>80</div>
+            <div class="srv-unidade">por arte</div>
+          </div>
+          <a href="https://wa.me/5584991236489?text=Ol%C3%A1%2C+Adson%21+Preciso+de+arte+para+uso+offline%2Fimpresso+%28R%24+80%2C00+por+arte%29+para+a+Arena+das+Dunas." target="_blank" class="srv-cta">💬 Solicitar</a>
+        </div>
+      </div>
+
+      <!-- Edição de vídeo -->
+      <div class="srv">
+        <div class="srv-icon">✂️</div>
+        <div class="srv-nome">Edição de vídeo — Reels</div>
+        <div class="srv-desc">Edição de reels com até 60 segundos para Instagram — corte, legendas, trilha, efeitos e formatação para o feed. Você fornece o material bruto.</div>
+        <div class="srv-bottom">
+          <div>
+            <div class="srv-valor"><sup>R$</sup>120</div>
+            <div class="srv-unidade">por vídeo (até 60s)</div>
+          </div>
+          <a href="https://wa.me/5584991236489?text=Ol%C3%A1%2C+Adson%21+Preciso+de+edi%C3%A7%C3%A3o+de+v%C3%ADdeo+%28R%24+120%2C00%29+para+a+Arena+das+Dunas." target="_blank" class="srv-cta">💬 Solicitar</a>
+        </div>
+      </div>
+
+      <!-- Roteiro -->
+      <div class="srv">
+        <div class="srv-icon">📋</div>
+        <div class="srv-nome">Roteiro ou guia de gravação</div>
+        <div class="srv-desc">Criação de roteiro completo ou guia prático para gravação de eventos — com estrutura de cenas, falas, enquadramentos e orientações para a equipe.</div>
+        <div class="srv-bottom">
+          <div>
+            <div class="srv-valor"><sup>R$</sup>100</div>
+            <div class="srv-unidade">por roteiro</div>
+          </div>
+          <a href="https://wa.me/5584991236489?text=Ol%C3%A1%2C+Adson%21+Preciso+de+roteiro+ou+guia+de+grava%C3%A7%C3%A3o+%28R%24+100%2C00%29+para+a+Arena+das+Dunas." target="_blank" class="srv-cta">💬 Solicitar</a>
+        </div>
+      </div>
+
+      <!-- Gravação + edição -->
+      <div class="srv">
+        <div class="srv-icon">🎬</div>
+        <div class="srv-nome">Gravação e edição para redes sociais</div>
+        <div class="srv-desc">Produção completa de 1 vídeo para redes sociais — câmera profissional Sony, iluminação com softbox, microfone lapela e edição final pronta para publicar.</div>
+        <div class="srv-bottom">
+          <div>
+            <div class="srv-valor"><sup>R$</sup>200</div>
+            <div class="srv-unidade">por vídeo · gravação + edição</div>
+          </div>
+          <a href="https://wa.me/5584991236489?text=Ol%C3%A1%2C+Adson%21+Preciso+de+grava%C3%A7%C3%A3o+e+edi%C3%A7%C3%A3o+de+v%C3%ADdeo+%28R%24+200%2C00%29+para+a+Arena+das+Dunas." target="_blank" class="srv-cta">💬 Solicitar</a>
+        </div>
+      </div>
+
+      <!-- Cobertura de eventos -->
+      <div class="srv">
+        <div class="srv-icon">📹</div>
+        <div class="srv-nome">Cobertura de eventos</div>
+        <div class="srv-desc">Cobertura profissional ao vivo do evento com câmera Sony e microfone — captação de imagens, bastidores, depoimentos e momentos marcantes para uso em redes sociais e acervo.</div>
+        <div class="srv-bottom">
+          <div>
+            <div class="srv-valor"><sup>R$</sup>150</div>
+            <div class="srv-unidade">por hora · câmera + microfone</div>
+          </div>
+          <a href="https://wa.me/5584991236489?text=Ol%C3%A1%2C+Adson%21+Preciso+de+cobertura+de+evento+%28R%24+150%2C00%2Fhora%29+para+a+Arena+das+Dunas." target="_blank" class="srv-cta">💬 Solicitar</a>
+        </div>
+      </div>
+
+      <!-- Consultoria -->
+      <div class="srv" style="grid-column: 1 / -1;">
+        <div class="srv-icon">🧭</div>
+        <div class="srv-nome">Consultoria de marketing</div>
+        <div class="srv-desc" style="max-width:680px;">Sessão estratégica com Adson Ângelo para diagnóstico, planejamento, posicionamento de marca, análise de redes sociais ou qualquer demanda de marketing do Arena das Dunas — com orientações práticas e aplicáveis.</div>
+        <div class="srv-bottom">
+          <div>
+            <div class="srv-valor"><sup>R$</sup>150</div>
+            <div class="srv-unidade">por hora</div>
+          </div>
+          <a href="https://wa.me/5584991236489?text=Ol%C3%A1%2C+Adson%21+Tenho+interesse+em+uma+consultoria+de+marketing+%28R%24+150%2C00%2Fhora%29+para+a+Arena+das+Dunas." target="_blank" class="srv-cta">💬 Agendar consultoria</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TABELA RESUMO -->
+<section id="resumo" class="sec">
+  <div class="sec-inner">
+    <div class="sh"><span class="sh-n">02</span><h2 class="sh-t">Resumo de valores</h2></div>
+    <table class="tabela">
+      <thead>
+        <tr>
+          <th>Serviço</th>
+          <th>Descrição</th>
+          <th style="text-align:right;">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Arte digital</td>
+          <td>Post, story, capa ou arte para WhatsApp <span class="tag">por arte</span></td>
+          <td>R$ 50,00</td>
+        </tr>
+        <tr>
+          <td>Arte offline</td>
+          <td>Banner, crachá, flyer, lona — arquivo para impressão <span class="tag">por arte</span></td>
+          <td>R$ 80,00</td>
+        </tr>
+        <tr>
+          <td>Edição de vídeo</td>
+          <td>Reels até 60s com corte, trilha e legendas <span class="tag">por vídeo</span></td>
+          <td>R$ 120,00</td>
+        </tr>
+        <tr>
+          <td>Roteiro / guia de gravação</td>
+          <td>Roteiro completo para evento ou gravação <span class="tag">por roteiro</span></td>
+          <td>R$ 100,00</td>
+        </tr>
+        <tr>
+          <td>Gravação + edição</td>
+          <td>1 vídeo completo para redes sociais <span class="tag">por vídeo</span></td>
+          <td>R$ 200,00</td>
+        </tr>
+        <tr>
+          <td>Cobertura de eventos</td>
+          <td>Câmera profissional + microfone no evento <span class="tag">por hora</span></td>
+          <td>R$ 150,00</td>
+        </tr>
+        <tr>
+          <td>Consultoria de marketing</td>
+          <td>Sessão estratégica com Adson Ângelo <span class="tag">por hora</span></td>
+          <td>R$ 150,00</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- AGÊNCIA -->
+<section id="agencia" class="sec sec-mid">
+  <div class="sec-inner">
+    <div class="sh"><span class="sh-n">03</span><h2 class="sh-t">Agência Ângelo</h2></div>
+    <div class="agencia-box">
+      <p style="font-size:15.5px;font-weight:300;color:rgba(255,255,255,0.62);line-height:1.9;margin-bottom:16px;">A <strong style="color:white;font-weight:500;">Agência Ângelo</strong> é uma agência de marketing digital focada em aumentar resultados de profissionais e empresas. Com quase 5 anos de atuação, já atendemos clientes de segmentos variados — de eventos e esporte a clínicas médicas e indústrias.</p>
+      <p style="font-size:15.5px;font-weight:300;color:rgba(255,255,255,0.62);line-height:1.9;">Liderada por <strong style="color:white;font-weight:500;">Adson Ângelo</strong>, graduado em Gestão de Marketing com <strong style="color:white;font-weight:500;">MBA em Comunicação e Marketing pela USP/ECA</strong>. Oferecemos serviços de design, produção audiovisual, gestão de redes sociais e consultoria estratégica.</p>
+      <div class="agencia-nums">
+        <div class="agencia-num"><span>5</span><p>anos de atuação</p></div>
+        <div class="agencia-num"><span>30+</span><p>clientes atendidos</p></div>
+        <div class="agencia-num">
+          <a href="https://instagram.com/aagenciaangelo" target="_blank" style="text-decoration:none;">
+            <span>📸</span>
+            <p style="color:var(--lj);margin-top:4px;">@aagenciaangelo</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-sec">
+  <div class="cta-inner">
+    <div>
+      <h2 class="cta-h">PRONTO PARA<br><em>COMEÇAR?</em></h2>
+      <p class="cta-p">Me chame no WhatsApp, conte o que precisa e já te passo a confirmação do serviço e o prazo de entrega.</p>
+    </div>
+    <a href="https://wa.me/5584991236489?text=Ol%C3%A1%2C+Adson%21+Vi+a+proposta+e+quero+contratar+um+servi%C3%A7o+para+a+Arena+das+Dunas." target="_blank" class="cta-btn">💬 Falar pelo WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-logo"><span>Agência</span> Ângelo</div>
+  <div class="ft-info">
+    Adson Ângelo · contato@agenciaangelo.com.br<br>
+    <a href="https://instagram.com/aagenciaangelo" target="_blank" style="color:var(--lj);text-decoration:none;">@aagenciaangelo</a><br>
+    Proposta válida por 15 dias · Julho 2026
+  </div>
+</footer>
+
+</body>
+</html>
